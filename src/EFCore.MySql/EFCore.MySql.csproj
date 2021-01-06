@@ -18,10 +18,6 @@
     <Compile Include="..\Shared\*.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(LocalPomeloJsonObjectRepository)' == ''">
-    <PackageReference Include="Pomelo.JsonObject" Version="$(PomeloJsonObjectVersion)" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(LocalEFCoreRepository)' == ''">
     <!-- TODO: Add Microsoft.EntityFrameworkCore as well for .NET 5. Makes it easier for users. -->
     <!-- PrivateAssets="none" is set to flow the EF Core analyzer to users referencing this package https://github.com/aspnet/EntityFrameworkCore/pull/11350 -->
@@ -70,6 +66,10 @@
     <Reference Include="MySqlConnector">
       <HintPath>$(LocalMySqlConnectorRepository)\src\MySqlConnector\bin\Debug\$(TargetFramework)\MySqlConnector.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
   <ItemGroup>
